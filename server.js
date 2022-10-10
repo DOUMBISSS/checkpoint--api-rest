@@ -24,28 +24,28 @@ app.use(routes);
 app.use(bodyParser.json())
 
 
-app.get('/Users', function (req, res) {
-  User.find ().then((user)=> {
-    res.json(user)})
-  })
+// app.get('/Users', function (req, res) {
+//   User.find ().then((user)=> {
+//     res.json(user)})
+//   })
 
-  app.post('/users', function (req, res) {
-    new User(req.body).save().then((user) => {
-          res.send("person saved successful")
-      })
-  });
+//   app.post('/users', function (req, res) {
+//     new User(req.body).save().then((user) => {
+//           res.send("person saved successful")
+//       })
+//   });
 
-app.put('/user/:id', function (req, res) {
-    User.findByIdAndUpdate(req.params.id,{name:"Karim"}).then((user)=>{
-      res.send(user);
-    })
-  });
+// app.put('/user/:id', function (req, res) {
+//     User.findByIdAndUpdate(req.params.id,{name:"Karim"}).then((user)=>{
+//       res.send(user);
+//     })
+//   });
 
-app.delete('/user/:id', function (req, res) {
-  User.findByIdAndDelete(req.params.id).then((user)=>{
-    res.send(user);
-  })
-  });
+// app.delete('/user/:id', function (req, res) {
+//   User.findByIdAndDelete(req.params.id).then((user)=>{
+//     res.send(user);
+//   })
+//   });
 
   app.listen(port, () =>{
     console.log(`Server running at ${port}`)
